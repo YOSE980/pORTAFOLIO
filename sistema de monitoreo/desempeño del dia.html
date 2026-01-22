@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desempeño del Día</title>
+    <link rel="stylesheet" href="desempeño.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="menu-icon">
+            <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="navres">
+            <nav>
+                <div class="cuenta">
+                    <strong>USUARIO:</strong>
+                    <p> <span class="user-name">Juan Perez</span></p>
+                    <strong>ROL:</strong>
+                    <p> <span class="user-role">Administrador</span></p>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="clientes.html">Clientes</a></li>
+                        <li><a href="grupo.html">Grupos</a></li>
+                        <li><a href="monitoreo.html">Monitoreo</a></li>
+                        <li><a href="Tesoreria.html">Tesorería</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <aside>
+        <nav>
+            <div class="cuenta">
+                <strong>USUARIO:</strong>
+                <p> <span class="user-name">Juan Perez</span></p>
+                <strong>ROL:</strong>
+                <p> <span class="user-role">Administrador</span></p>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="grupo.html">Grupos</a></li>
+                    <li><a href="monitoreo.html">Monitoreo</a></li>
+                    <li><a href="Tesoreria.html">Tesorería</a></li>
+                </ul>
+            </div>
+            <div>
+                <button class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </aside>
+
+    <main>
+        <div class="header">
+            <div class="header-info">
+                <h1>Desempeño del Día</h1>
+            </div>
+            <div class="stats">
+                <div class="searchInputWrapper">
+                    <input id="date-filter" type="date" title="Seleccionar fecha" class="elegant-date">
+                    <button id="btn-filter" class="elegant-btn primary">Buscar</button>
+                    <button id="btn-today" class="elegant-btn secondary">Hoy (Últ. 24h)</button>
+                </div>
+            </div>
+        </div>
+        <!-- SECCIÓN DE DETALLES DEL DESEMPEÑO -->
+        <div class="container">
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+            <div class="table">
+                <div class="filter-section">
+                    <label for="advisor-filter">Buscar Asesor:</label>
+                    <input id="advisor-filter" type="text" placeholder="Ingrese nombre del asesor..." class="filter-input" title="Ingrese nombre del asesor">
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Grupo</th>
+                                <th>Asesor</th>
+                                <th>Monto</th>
+                                <th>Efectivo</th>
+                                <th>QR</th>
+                            </tr>
+                        </thead>
+                        <tbody id="performance-data">
+                            <!-- Los datos se llenarán dinámicamente con JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="desempeño.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo</title>
+    <link rel="stylesheet" href="monitoreo.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+    <header>
+        <div class="menu-icon">
+            <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="navres">
+            <nav>
+                <div class="cuenta">
+                    <strong>USUARIO:</strong>
+                    <p> <span class="user-name">Juan Perez</span></p>
+                    <strong>ROL:</strong>
+                    <p> <span class="user-role">Administrador</span></p>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="clientes.html">Clientes</a></li>
+                        <li><a href="grupo.html">Grupos</a></li>
+                        <li><a href="desempeño del dia.html">Desempeño del Día</a></li>
+                        <li><a href="monitoreo.html">Monitoreo</a></li>
+                        <li><a href="Tesoreria.html">Tesorería</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <aside>
+        <nav>
+            <div class="cuenta">
+                <strong>USUARIO:</strong>
+                <p> <span class="user-name">Juan Perez</span></p>
+                <strong>ROL:</strong>
+                <p> <span class="user-role">Administrador</span></p>
+            </div>
+            <div>
+            <ul>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="grupo.html">Grupos</a></li>
+                <li><a href="desempeño del dia.html">Desempeño del Día</a></li>
+                <li><a href="monitoreo.html">Monitoreo</a></li>
+                <li><a href="Tesoreria.html">Tesorería</a></li>
+            </ul>
+            </div>
+            <div>
+                <button class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </aside>
+
+    <main>
+        <div class="header">
+            <div class="header-info">
+                <h1>Monitoreo</h1>
+                <h3>Datos del día</h3>
+            </div>
+            <div class="stats">
+                <div>Total de Acciones: <strong id="total-count">0</strong></div>
+
+                <div class="searchInputWrapper">
+                    <input id="date-filter" type="date" title="Seleccionar fecha" class="elegant-date">
+                    <button id="btn-filter" class="elegant-btn primary">Buscar</button>
+                    <button id="btn-today" class="elegant-btn secondary">Hoy (Últ. 24h)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="botones">
+                <button id="btn-export" class="btn btn-exportar">Exportar CSV</button>
+                <button id="btn-clear" class="btn btn-Limpiar">Limpiar / Recargar</button>
+            </div>
+
+            <div class="table-container">
+                <table id="historial-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre-Usuario</th>
+                            <th>Fecha y Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filas generadas por JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <script src="monitoreo.js"></script>
+    </footer>
+</body>
+</html>

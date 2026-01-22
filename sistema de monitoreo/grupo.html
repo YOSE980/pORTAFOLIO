@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Grupo.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+    <!-- Header: logo/menú superior -->
+    <header>
+        <div class="menu-icon">
+            <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="navres">
+            <nav>
+                <div class="cuenta">
+                    <strong>USUARIO:</strong>
+                    <p> <span class="user-name">Juan Perez</span></p>
+                    <strong>ROL:</strong>
+                    <p> <span class="user-role">Administrador</span></p>
+                </div>
+                <div>
+                <ul>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="grupo.html">Grupos</a></li>
+                    <li><a href="desempeño del dia.html">Desempeño del Día</a></li>
+                    <li><a href="monitoreo.html">Monitoreo</a></li>
+                    <li><a href="Tesoreria.html">Tesorería</a></li>
+                </ul>
+                </div>
+                <div>
+                    <button class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <aside>
+        <nav>
+            <div class="cuenta">
+                <strong>USUARIO:</strong>
+                <p> <span class="user-name">Juan Perez</span></p>
+                <strong>ROL:</strong>
+                <p> <span class="user-role">Administrador</span></p>
+            </div>
+            <div>
+            <ul>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="grupo.html">Grupos</a></li>
+                <li><a href="desempeño del dia.html">Desempeño del Día</a></li>
+                <li><a href="monitoreo.html">Monitoreo</a></li>
+                <li><a href="Tesoreria.html">Tesorería</a></li>
+            </ul>
+            </div>
+            <div>
+                <button class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </aside>
+    <main>
+        <div class="header">
+                <div class="header-info">
+                    <div class="Identifcaciondelgrupo">
+                        <div>
+                            <h1>Grupo: <span id="current-group-name">--</span></h1>
+                            <h3>Gestión activa: <span id="current-gestion-number">#-</span> - <span id="current-gestion-dates">--</span></h3>
+                        </div>
+                        <div class="button">
+                            <span class="material-icons-outlined">
+                                edit
+                            </span>
+                            <span class="material-icons-outlined">
+                                delete
+                            </span>
+                        </div>
+                    </div>
+                    <div class="info-grupo">
+                        <div class="datos">
+                            <div>
+                                <strong>Asesor:</strong><h3>--</h3>
+                            </div>
+                            <div>
+                                <strong>Cobrador:</strong><h3>--</h3>
+                            </div>
+                            <div>
+                                <strong>Capital:</strong><h3>--</h3>
+                            </div>
+                            <div>
+                                <strong>Día de Pago:</strong><h3>--</h3> 
+                            </div>
+                        </div>
+                        <div class="datos">
+                                                    <div>
+                            <strong>Forma de trabajo:</strong><h3>--</h3>
+                        </div>
+                        <div>
+                            <strong>Fecha de Apertura:</strong><h3>--</h3>
+                        </div>
+                        <div>
+                            <strong>Fecha de Cierre:</strong><h3>--</h3>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div>Total de Miembros: <strong></strong></div>
+                    <div>
+                        
+                        <select id="gestion-selector" class="elegant-select">
+                            <option value="1">Gestión # </option>
+                            
+                        </select>
+                    </div>
+                    <div class="searchInputWrapper">
+                        <input class="searchInput" type="text" placeholder='focus here to search'>
+                        <span id="search-icon" onclick="" class="material-icons-outlined searchIcon">search</span>
+                    </div>
+                </div>
+        </div>
+        <div class="bloque">
+            <div class="container">
+            <!-- Header: título y KPIs -->
+                <div class="controls">
+                    <div>
+                        <h2>Listado de Miembros</h2>
+                    </div>
+                    <!-- Controls: añadir/importar/exportar/buscar -->
+                    <div class="control-buttons">
+                        <button id="create-group-btn" class="btn btn-primary">+ Crear Grupo</button>
+                        <button id="add-gestion-btn" class="btn btn-secondary">+ Nueva Gestión</button>
+                        <button id="add-member-btn" class="btn btn-secondary">+ Añadir Miembro</button>
+                        <!-- Botones ocultos por ahora -->
+                        <button class="btn btn-secondary" style="display: none;">Importar miembros</button>
+                        <button class="btn btn-secondary" style="display: none;">Exportar miembros (Excel)</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                <!-- Table: listado del grupo -->
+                    <table id="group-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>N° De cuota</th>
+                                <th>Estado de cuota</th>
+                                <th>Monto</th>
+                                <th>Telefono</th>
+                                <th>Registro de <br>Pago</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="salto-dos">--</td>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                                <td class="Registro">
+                                    <span class="material-icons-outlined">
+                                        app_registration
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="seccion">
+                    <table class="His-ges">
+                        <thead>
+                            <tr>
+                                <th>Historial de Gestiones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gestion </strong>2024</td>
+                                <td>-- <strong>--</strong></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+            </div>
+        </div>
+    </main>
+    <!-- Footer: información legal/contacto -->
+    <footer>
+        
+    </footer>
+
+    <!-- Modal Agregar Miembro -->
+    <div id="modal-add-member" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-add-member-title">
+            <header class="modal-header">
+                <h3 id="modal-add-member-title">Agregar Miembro a Gestión Actual</h3>
+                <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+            </header>
+            <form id="form-add-member" class="modal-form">
+                <label>Nombre Completo del Cliente
+                    <input type="text" name="cliente_nombre" placeholder="Ej: Juan Pérez García" required>
+                </label>
+                <label>Monto
+                    <input name="monto" type="number" step="0.01" required>
+                </label>
+                <div class="modal-actions">
+                    <button type="button" class="btn secondary" data-close>Cancelar</button>
+                    <button type="submit" class="btn primary">Agregar a Gestión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Nueva Gestión -->
+    <div id="modal-add-gestion" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true">
+            <header class="modal-header">
+                <h3>Nueva Gestión para: <span id="modal-group-name">Alfa</span></h3>
+                <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+            </header>
+            <form id="form-add-gestion" class="modal-form">
+                <label>Gestion N°
+                    <input name="numero_gestion" type="number" required>
+                </label>
+                <label>Fecha inicio
+                    <input name="fecha_inicio" type="date" required>
+                </label>
+                <label>Forma de trabajo
+                    <select name="forma_trabajo_id" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="1">Semanal</option>
+                        <option value="2">Quincenal</option>
+                        <option value="3">Mensual</option>
+                    </select>
+                </label>
+                <label>Dia de pago
+                    <input name="dia_pago" type="number" step="0.01">
+                </label>
+                <label>Asesor
+                    <select name="asesor_id" required>
+                        <option value="">Seleccionar asesor...</option>
+                        <!-- Se llenará con JavaScript -->
+                    </select>
+                </label>
+                <label>Cobrador
+                    <select name="cobrador_id" required>
+                        <option value="">Seleccionar cobrador...</option>
+                        <!-- Se llenará con JavaScript -->
+                    </select>
+                </label>
+                <label>
+                    N° de cuotas
+                    <input name="num_cuotas" type="number" required>
+                </label>
+                <div class="modal-actions">
+                    <button type="button" class="btn secondary" data-close>Cancelar</button>
+                    <button type="submit" class="btn primary">Crear Gestión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Editar Miembro -->
+    <div id="modal-edit-member" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-edit-member-title">
+            <header class="modal-header">
+                <h3 id="modal-edit-member-title">Editar Miembro del Grupo</h3>
+                <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+            </header>
+            <form id="form-edit-member" class="modal-form">
+                <label>Nombre
+                    <input name="nombre" type="text" required>
+                </label>
+                <label>Tipo
+                    <input name="tipo" type="text">
+                </label>
+                <label>Forma de trabajo
+                    <input name="formaTrabajo" type="text">
+                </label>
+                <label>Asesor
+                    <input name="asesor" type="text">
+                </label>
+                <label>Día de pago
+                    <input name="diaPago" type="text">
+                </label>
+                <label>Fecha apertura
+                    <input name="fechaApertura" type="date">
+                </label>
+                <label>Caja chica
+                    <input name="cajaChica" type="text">
+                </label>
+                <label>Capital de banca
+                    <input name="capitalBanca" type="text">
+                </label>
+                <div class="modal-actions">
+                    <button type="button" class="btn secondary" data-close>Cancelar</button>
+                    <button type="submit" class="btn primary">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal Crear Grupo (NUEVO) -->
+    <div id="modal-create-group" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true">
+            <header class="modal-header">
+                <h3>Crear Nuevo Grupo</h3>
+                <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+            </header>
+            <form id="form-create-group" class="modal-form">
+                <label>Nombre del Grupo
+                    <input name="nombreGrupo" type="text" required placeholder="Ej: Grupo Alfa">
+                </label>
+                <div class="modal-actions">
+                    <button type="button" class="btn secondary" data-close>Cancelar</button>
+                    <button type="submit" class="btn primary">Crear Grupo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal Editar Grupo -->
+    <div id="modal-edit-group" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-edit-group-title">
+            <header class="modal-header">
+                <h3 id="modal-edit-group-title">Editar Información del Grupo</h3>
+                <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+            </header>
+            <form id="form-edit-group" class="modal-form">
+                <label>Nombre del Grupo
+                    <input name="nombreGrupo" type="text" required>
+                </label>
+                <label>Asesor
+                    <input name="asesor_nombre" type="text">
+                </label>
+                <label>Cobrador
+                    <input name="cobrador_nombre" type="text">
+                </label>
+                <label>Capital
+                    <input name="capital" type="text">
+                </label>
+                <label>Día de Pago
+                    <input name="dia_pago" type="text">
+                </label>
+                <label>Forma de trabajo
+                    <select name="forma_trabajo_id">
+                        <option value="">--</option>
+                        <option value="1">Semanal</option>
+                        <option value="2">Quincenal</option>
+                        <option value="3">Mensual</option>
+                    </select>
+                </label>
+                <label>Fecha de Apertura
+                    <input name="fecha_apertura" type="date">
+                </label>
+                <label>Fecha de Cierre
+                    <input name="fecha_cierre" type="date">
+                </label>
+                <div class="modal-actions">
+                    <button type="button" class="btn secondary" data-close>Cancelar</button>
+                    <button type="submit" class="btn primary">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+        <!-- Modal Ver Miembros -->
+    <div id="modal-view-members" class="modal-overlay" aria-hidden="true">
+            <div class="modal" role="dialog" aria-modal="true" style="max-width: 800px;">
+                <header class="modal-header">
+                    <h3>Miembros del Grupo: <span id="modal-group-members-name">Alfa</span></h3>
+                    <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+                </header>
+                <div class="modal-content">
+                    <table id="members-table" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Email</th>
+                                <th>Fecha Ingreso</th>
+                            </tr>
+                        </thead>
+                        <tbody id="members-table-body">
+                            <!-- Se llenará dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+    <div id="modal-pago" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-pago-title">
+        <header class="modal-header">
+            <h3 id="modal-pago-title">Gestión de pago</h3>
+            <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+        </header>
+        <form id="form-pago" class="modal-form">
+            <div class="modal-grid">
+                <div class="modal-col modal-col-left">
+                    <label>N° de cuota
+                        <select name="numero-cuota" id="numero-cuota">
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                        </select>
+                    </label>
+                    <label>Estado
+                        <select name="estado-pago" id="estado-pago">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="pagado">Pagado</option>
+                        </select>
+                    </label>
+                    <label>Método de pago QR
+                        <input type="text">
+                    </label>
+                    <label>Metodo de pago Efectivo
+                        <input type="text">
+
+                    </label>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn secondary" data-close>Cancelar</button>
+                <button type="submit" class="btn primary">Registrar Pago</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    <script src="grupo.js"></script>
+</body>
+</html>

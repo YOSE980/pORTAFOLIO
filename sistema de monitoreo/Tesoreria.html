@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesorería</title>
+    <link rel="stylesheet" href="Tesoreria.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+    <header>
+        <div class="menu-icon">
+            <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="navres">
+            <nav>
+                <div class="cuenta">
+                    <strong>USUARIO:</strong>
+                    <p> <span class="user-name">Juan Perez</span></p>
+                    <strong>ROL:</strong>
+                    <p> <span class="user-role">Administrador</span></p>
+                </div>
+                <div>
+                <ul>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="grupo.html">Grupos</a></li>
+                    <li><a href="desempeño del dia.html">Desempeño del Día</a></li>
+                    <li><a href="monitoreo.html">Monitoreo</a></li>
+                    <li><a href="Tesoreria.html">Tesorería</a></li>
+                </ul>
+                </div>
+                <div>
+                    <button class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <aside>
+        <nav>
+            <div class="cuenta">
+                <strong>USUARIO:</strong>
+                <p> <span class="user-name">Juan Perez</span></p>
+                <strong>ROL:</strong>
+                <p> <span class="user-role">Administrador</span></p>
+            </div>
+            <div>
+            <ul>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="grupo.html">Grupos</a></li>
+                <li><a href="desempeño del dia.html">Desempeño del Día</a></li>
+                <li><a href="monitoreo.html">Monitoreo</a></li>
+                <li><a href="Tesoreria.html">Tesorería</a></li>
+            </ul>
+            </div>
+            <div>
+                <button class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </aside>
+    <main>
+        <div class="header">
+            <h1>Tesorería</h1>
+        </div>
+        <div class="buttons-container">
+            <button class="btn btn-primary" id="btn-saldo-inicial">Saldo Inicial</button>
+            <button class="btn btn-primary" id="btn-saldo-final">Saldo Final</button>
+            <button class="btn btn-primary btn-recu" id="btn-recuperacion">Recuperacion <br> de credito</button>
+            <button class="btn btn-primary">Exportar QR</button>
+            <button class="btn btn-primary">Exportar Efectivo</button>
+        </div>
+        <div class="container">
+            <div class="blocks-wrapper">
+                <div class="block ingresos-block">
+                    <h2>Ingresos</h2>
+                    <div class="block-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concepto</th>
+                                    <th>Cantidad</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3" style="text-align: center; color: #999;">No hay datos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="block egresos-block">
+                    <h2>Egresos</h2>
+                    <div class="block-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concepto</th>
+                                    <th>Cantidad</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3" style="text-align: center; color: #999;">No hay datos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Recuperación de Crédito -->
+    <div id="modal-recuperacion" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-recuperacion-title">
+            <header class="modal-header">
+                <h3 id="modal-recuperacion-title">Recuperación de Crédito</h3>
+                <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+            </header>
+            <form id="form-recuperacion" class="modal-form">
+                <div class="modal-grid">
+                    <div class="modal-col">
+                        <label>Tipo de Movimiento
+                            <select name="tipo_movimiento" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="ingreso">Ingreso</option>
+                                <option value="salida">Salida</option>
+                            </select>
+                        </label>
+                        <label>Cuenta
+                            <input name="cuenta" type="text" required placeholder="Ej: AC-001">
+                        </label>
+                        <label>
+                            <strong>Monto</strong>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <label>QR
+                        <input name="qr" type="number" placeholder="Monto en QR" step="0.01">
+                    </label>
+                    <label>Efectivo
+                        <input name="efectivo" type="number" placeholder="Monto en Efectivo" step="0.01">
+                    </label>
+                </div>
+
+                <label>Descripción
+                    <textarea name="descripcion" placeholder="Ej: Pago de cuota del mes de enero" rows="4"></textarea>
+                </label>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn secondary" data-close>Cancelar</button>
+                    <button type="submit" class="btn primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Saldo Inicial -->
+    <div id="modal-saldo-inicial" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-saldo-inicial-title">
+            <header class="modal-header">
+                <h3 id="modal-saldo-inicial-title">Saldo Inicial</h3>
+                <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+            </header>
+            <form id="form-saldo-inicial" class="modal-form">
+                <label>Monto
+                    <input name="monto" type="number" required placeholder="Ej: 1000.00" step="0.01">
+                </label>
+                <label>Fecha
+                    <input name="fecha" type="date" required>
+                </label>
+                <div class="modal-actions">
+                    <button type="button" class="btn secondary" data-close>Cancelar</button>
+                    <button type="submit" class="btn primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Saldo Final -->
+    <div id="modal-saldo-final" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-saldo-final-title">
+            <header class="modal-header">
+                <h3 id="modal-saldo-final-title">Saldo Final</h3>
+                <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+            </header>
+            <form id="form-saldo-final" class="modal-form">
+                <label>Monto
+                    <input name="monto" type="number" required placeholder="Ej: 1500.00" step="0.01">
+                </label>
+                <label>Fecha
+                    <input name="fecha" type="date" required>
+                </label>
+                <div class="modal-actions">
+                    <button type="button" class="btn secondary" data-close>Cancelar</button>
+                    <button type="submit" class="btn primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Footer content if needed -->
+    </footer>
+    
+    <script src="Tesoreria.js"></script>
+</body>
+</html>
